@@ -56,7 +56,7 @@ public:
 
 	// ------ io stream operators v
 
-	friend ostream& operator << (ostream& out, const Date& date);
-		friend istream& operator >> (istream& in, Date& date);
+	friend ostream& operator<<(ostream& out, const Date& date);
+		friend istream& operator>>(istream& in, Date& date);
 
 };
