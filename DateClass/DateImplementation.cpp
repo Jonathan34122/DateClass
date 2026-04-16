@@ -128,9 +128,20 @@ Date& Date::operator++() { // ++date
 
 	// ---- Subtraction Op
 
-	int Date::operator-(const) const {
+	int Date::operator-(const Date& other) const {
 
+		int days1 = year * 365 + day;
+		int days2 = other.year * 365 + other.day;
 
+		for (int i = 1; i < month; i++) {
+			days1 += lastDay(i, year);
+		}
 
+		for (int i = 1; i < other.month; i++) {
+			days2 += lastDay(i, other.year);
+		}
+
+		return days1 - days2;
 
 	}
+
