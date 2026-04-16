@@ -39,4 +39,24 @@ public:
 
 	void printReport();
 
+	// ------ Increment Operators v
+
+	Date& operator++();
+	Date operator++(int); // postfix
+
+	// ------ Decrement Operators v
+
+	Date& operator--();
+	Date operator--(int); // postfix
+
+
+	// ------ Subtraction Operator v
+
+	int operator-(const Date& other) const;
+
+	// ------ io stream operators v
+
+	friend ostream& operator << (ostream& out, const Date& date);
+		friend istream& operator >> (istream& in, Date& date);
+
 };
