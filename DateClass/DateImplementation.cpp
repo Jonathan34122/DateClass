@@ -60,6 +60,8 @@ int Date::lastDay(int m, int y) const {
 		return 31;
 	case 4: case 6: case 9: case 11: // months with 30
 		return 30;
+	case 2:
+		return isLeapYear(y) ? 29 : 28
 	}
 }
 
@@ -121,5 +123,14 @@ Date& Date::operator++() { // ++date
 		Date temporary = *this;
 		--(*this);
 		return temporary;
+
+	}
+
+	// ---- Subtraction Op
+
+	int Date::operator-(const) const {
+
+
+
 
 	}
