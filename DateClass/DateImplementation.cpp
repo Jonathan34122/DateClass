@@ -73,24 +73,53 @@ void Date::printReport() {
 	cout << day << " " << months[month] << " " << year << endl;
 }
 
-Date& Date::operator++() { // prefix
+Date& Date::operator++() { // ++date
 
 	day++;
 
 	if (day > lastDay()) {
 
-		day = 1;
+		day = 1; // reset to day 1.
 		month++;
 
-		if (month > 12) {
+		if (month > 12) { // 13 months = + 1 year, set extra month to 1.
 			month = 1;
 			year++;
-	}
+		}
 		return *this;
 	}
 
-
-
-
-
 }
+
+	Date Date::operator++(int) { // date++
+
+		Date temporary = *this;
+		++(*this);
+		return temporary;
+
+	}
+
+	Date& Date::operator--() { // --date
+
+		day--;
+
+		if (day < 1) {
+			month--;
+
+			if (month < 1) {
+				month = 12;
+				year--;
+
+			}
+			day = lastDay(month, year);
+		}
+		return *this;
+	}
+
+	Date Date::operator--(int) { // Date--
+
+		Date temporary = *this;
+		--(*this);
+		return temporary;
+
+	}
