@@ -40,10 +40,12 @@ int main(){
      // cout << date1.isLeapYear() << endl;
      // cout << date1.lastDay();
 
-    Date d1(9, 21, 1994);
-    cout << d1++;
+    Date date1(9, 21, 1994);
+    Date date2(8, 4, 2002);
 
-
+    date1++;
+    cout << date1;
+    cout << ++date1;
 
 
 
