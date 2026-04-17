@@ -28,15 +28,24 @@ int main(){
 
 
     // Set Date via Constructor
-    Date date1(12, 30, 2020);
+     // Date date1(12, 30, 2020);
     // print in three formats
-    date1.printReport();
+     // date1.printReport();
 
     // Note, when you call any of these member functions it only returns a value, since I didn't implement a cout besides in printReport,  you must use cout. Also must end line.
-    cout << endl;
-    cout << date1.getMonth() << endl;
-    cout << date1.getDay() << endl;
-    cout << date1.getYear() << endl;
-    cout << date1.isLeapYear() << endl;
-    cout << date1.lastDay();
+     // cout << endl;
+     // cout << date1.getMonth() << endl;
+     // cout << date1.getDay() << endl;
+     // cout << date1.getYear() << endl;
+     // cout << date1.isLeapYear() << endl;
+     // cout << date1.lastDay();
+
+    Date d1(9, 21, 1994);
+    cout << d1++;
+
+
+
+
+
+
 }

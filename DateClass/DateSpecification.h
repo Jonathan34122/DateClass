@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class Date{
 
 private:
@@ -56,7 +57,7 @@ public:
 
 	// ------ io stream operators v
 
-	friend ostream& operator<<(ostream& out, const Date& date);
-		friend istream& operator>>(istream& in, Date& date);
+	friend std::ostream& operator<<(std::ostream& out, const Date& date);
+		friend std::istream& operator>>(std::istream& in, Date& date);
 
 };

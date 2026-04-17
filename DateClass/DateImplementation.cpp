@@ -60,8 +60,10 @@ int Date::lastDay(int m, int y) const {
 		return 31;
 	case 4: case 6: case 9: case 11: // months with 30
 		return 30;
-	case 2:
-		return isLeapYear(y) ? 29 : 28
+	case 2: // Feb
+		return isLeapYear(y) ? 29 : 28;
+	default: 
+		return 30;
 	}
 }
 
@@ -88,9 +90,9 @@ Date& Date::operator++() { // ++date
 			month = 1;
 			year++;
 		}
-		return *this;
-	}
 
+	}
+	return *this;
 }
 
 	Date Date::operator++(int) { // date++
@@ -152,14 +154,14 @@ Date& Date::operator++() { // ++date
 		string months[] = { " ", "January", "February", "March", "April",
 						   "May", "June", "July", "August", "September",
 							"October", "November", "December" };
-		out << months[date.month] << "" << date.day << ", " << date.year;
+		out << months[date.month] << " " << date.day << ", " << date.year;
 		return out;
 
 	}
 
 	// ---- Input Operator
 
-	istream& operator>>(istream& in, Date* date) {
+	istream& operator>>(istream& in, Date& date) {
 
 		int m, d, y;
 
@@ -170,7 +172,7 @@ Date& Date::operator++() { // ++date
 		cout << "Enter Year: ";
 		in >> y;
 
-		date->setDate(m, d, y);
+		date.setDate(m, d, y);
 		return in;
 
 	}
