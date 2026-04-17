@@ -145,3 +145,32 @@ Date& Date::operator++() { // ++date
 
 	}
 
+	// ---- Output Operator
+
+	ostream& operator<<(ostream& out, const Date& date) {
+
+		string months[] = { " ", "January", "February", "March", "April",
+						   "May", "June", "July", "August", "September",
+							"October", "November", "December" };
+		out << months[date.month] << "" << date.day << ", " << date.year;
+		return out;
+
+	}
+
+	// ---- Input Operator
+
+	istream& operator>>(istream& in, Date* date) {
+
+		int m, d, y;
+
+		cout << "Enter Month: ";
+		in >> m;
+		cout << "Enter Day: ";
+		in >> d;
+		cout << "Enter Year: ";
+		in >> y;
+
+		date->setDate(m, d, y);
+		return in;
+
+	}
